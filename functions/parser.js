@@ -1,5 +1,8 @@
 const fetch = require('node-fetch');
 const cheerio = require('cheerio');
+exports.handler = async function(event, context){
+    
+    
 const URL = "https://www.hiration.com/blog/recruiter-resume/";
 
 // function to get the raw data
@@ -28,31 +31,25 @@ const hirationblogdata = async () => {
     console.log(imob.length)
     $('img.img-hook').each((i,url)=>{
         const imgurl = $(url).attr("data-src");
-        console.log(imgurl)
+       // console.log(imgurl)
     })
     } catch (e) {
-      console.log(e) // handle error
+     // console.log(e) // handle error
     }
-    console.log(title.text());
-    console.log(description);
-    console.log(datepub);
-  
-  
+//     console.log(title.text());
+//     console.log(description);
+//     console.log(datepub);
 
+  return ({ body:title.text() })
         
 };
 
+return{
 
-
-
-
-
-
-exports.handler = async function(event, context){
-    hirationblogdata();
-return {
     statusCode: 200,
-    body: JSON.stringify({start:"hello World"})
-}
+    body: JSON.stringify(hirationblogdata())
+  }
+
+    
 
 }
