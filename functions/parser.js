@@ -3,7 +3,7 @@ const cheerio = require('cheerio');
 exports.handler = async function(event, context){
     
     
-const URL = "https://www.hiration.com/blog/recruiter-resume/";
+const URL = "https://www.hiration.com/blog/cyber-security-resume/";
 
 // function to get the raw data
 const getRawData = (URL) => { 
@@ -23,31 +23,36 @@ const hirationblogdata = async () => {
    let datepub = $('.post-full-meta-date').text();
    try {
     let bgimg = $('.post-full-image').attr("style").replace("background-image: url(","").replace(")","").split('?')[0];
-    console.log(bgimg);} catch(err){
-        console.log("You did not add an header image")
-    }
-    try {
-      let imob = $('img.img-hook')
-    console.log(imob.length)
-    $('img.img-hook').each((i,url)=>{
+    console.log(bgimg);
+    let imob = $('img.img-hook')
+    const img = [];
+    imob.each((i,url)=>{
         const imgurl = $(url).attr("data-src");
-       // console.log(imgurl)
+       img.push( { id: i, url: imgurl})
     })
-    } catch (e) {
-     // console.log(e) // handle error
-    }
+    return ({ Title:title.text(),
+        desc:description ,
+        pubdate: datepub, 
+        imgbg:bgimg,
+        img
+    
+    } )
+
+} catch(err){
+        console.log("You did not add an header image",)
+        
 //     console.log(title.text());
 //     console.log(description);
 //     console.log(datepub);
 
-  return ({ body:title.text() })
+}
         
 };
 
 return{
 
     statusCode: 200,
-    body: JSON.stringify(hirationblogdata())
+    body: JSON.stringify(await hirationblogdata())
   }
 
     
