@@ -14,7 +14,7 @@ export default function schimify() {
                     </div>
                     <div className="right">
                         <div id="output" className="output"> 
-                            Here is your schema code
+                            Here is your schema codes
                         
 
                         </div>
