@@ -23,7 +23,7 @@ const hirationblogdata = async () => {
    let datepub = $('.post-full-meta-date').text();
    try {
     let bgimg = $('.post-full-image').attr("style").replace("background-image: url(","").replace(")","").split('?')[0];
-    console.log(bgimg);
+    //console.log(bgimg);
     let imob = $('img.img-hook')
     const img = [];
     imob.each((i,url)=>{
