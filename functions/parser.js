@@ -3,7 +3,7 @@ const cheerio = require('cheerio');
 exports.handler = async function(event, context){
     
     
-const URL = "https://www.hiration.com/blog/cyber-security-resume/";
+const URL = event.queryStringParameters.url || "https://www.hiration.com/blog/recruiter-resume/";
 
 // function to get the raw data
 const getRawData = (URL) => { 

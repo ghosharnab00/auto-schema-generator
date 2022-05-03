@@ -1,10 +1,11 @@
 import Schimify from "./components/schimify";
-
+import Try from "./components/try";
 function App() {
   return (
     <div className="App">
-      < Schimify />
-      
+     
+      <Try/>
+      <Schimify/>
     </div>
   );
 }
