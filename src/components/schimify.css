@@ -5,7 +5,12 @@
     color: blue;
     height: 100%;
 }
-
+.instructions{
+    font-size: 15px;
+}
+.instructions span {
+    color: red;
+}
 .schimify{
     text-align: center;
 }

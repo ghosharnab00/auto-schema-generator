@@ -153,9 +153,12 @@ clicked = true;
                 <h1 className="schimify"> <span>Hiration</span> Schimify</h1>
                 <div className="wrapper">
                     <form className="left" action="/.netlify/functions/parser"> <input type="url" className='URL' name="url" id="url" placeholder='Paste the URL' value= {inputValue} onChange={inputchangeHandler}/>
-                        <input type="text" name="slug" id="slug" className='slug' placeholder='Paste the slug' value= {slug} onChange={slugHandler}/>
-                        <input type="text" name="keyword" id="keyword" className='keyword' placeholder='Paste the keyword' value= {kw} onChange={kwHandler} />
+                        <input type="text" name="slug" id="slug" className='slug' placeholder='Paste the slug' value= {slug} onChange={slugHandler} required/>
+                        <input type="text" name="keyword" id="keyword" className='keyword' placeholder='Paste the keyword' value= {kw} onChange={kwHandler} required/>
                         <button id="submit" className='sumbit' value= {clicked} onClick = {clickHandler}> Create the Schema </button>
+                        
+                        <p className='instructions'>⦿ Make sure to input the <span>Slug</span> and the <span>Keywords</span></p>
+                        <p className='instructions'>⦿ Make sure to have a <span>hero image</span> in the blog. else it will give error</p>
                     </form>
                     <div className="right">
                             <div className="schemawrapper">
