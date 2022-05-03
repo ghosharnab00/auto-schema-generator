@@ -49,9 +49,10 @@ clicked = true;
       let imgg = response.data.img;
       setPubdate(response.data.pubdate)
       //console.log(imgg);
-      let imgitter = [];
+      let imgitter = [`"${response.data.imgbg}"`];
+      console.log (imgitter);
+      setImgList(imgitter);
     for (var i=0; i < imgg.length ; ++i){
-      imgitter.push(`"${response.data.imgbg}"`)
       imgitter.push(`"${imgg[i].url}"`);
       setImgList(imgitter);}
         
@@ -70,7 +71,7 @@ clicked = true;
   let blogtype =   `"@type": "BlogPosting",`;
   let mainentity = ` "mainEntityOfPage": {`;
   let webtype = ` "@type": "WebPage",`;
-  let id = `"@id": "${inputValue}"},`;
+  let id = `"@id": "https://www.hiration.com/blog/${slug}/"},`;
   let heading = `"headline": "${title}",`;
   let description = `"description": "${desc}",`;
   let keyword = `"keywords": "${kw}",`;
