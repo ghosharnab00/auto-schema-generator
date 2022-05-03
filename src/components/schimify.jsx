@@ -1,11 +1,11 @@
-import React, {useEffect,useState} from 'react'
+import React, {useState} from 'react'
 import axios from 'axios'
 import './schimify.css'
 
 export default function Schimify() {
 //usestates Setting
 let [inputValue, setInputValue] = useState('')
-let [clicked, setClicked] = useState(false)
+let [clicked, setClicked] = useState(null)
 let [title, setTitle] = useState('')
 let [desc, setDesc] = useState('')
 let [pubdate, setPubdate] = useState('')
@@ -13,6 +13,7 @@ let [slug, setslug] = useState('')
 let [kw, setkw] = useState('')
 let [imgList,setImgList] = useState ('')
 
+clicked = true;
 // Handle Input It takes the URL from the frontend and creates the API 
   let inputchangeHandler= (event) =>{
     inputValue = event.target.value;
@@ -153,7 +154,7 @@ let [imgList,setImgList] = useState ('')
                     <form className="left" action="/.netlify/functions/parser"> <input type="url" className='URL' name="url" id="url" placeholder='Paste the URL' value= {inputValue} onChange={inputchangeHandler}/>
                         <input type="text" name="slug" id="slug" className='slug' placeholder='Paste the slug' value= {slug} onChange={slugHandler}/>
                         <input type="text" name="keyword" id="keyword" className='keyword' placeholder='Paste the keyword' value= {kw} onChange={kwHandler} />
-                        <button id="submit" className='sumbit' value= {false} onClick = {clickHandler}> Create the Schema </button>
+                        <button id="submit" className='sumbit' value= {clicked} onClick = {clickHandler}> Create the Schema </button>
                     </form>
                     <div className="right">
                             <div className="schemawrapper">
