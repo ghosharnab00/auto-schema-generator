@@ -11,6 +11,16 @@
 .instructions span {
     color: red;
 }
+.footer{
+    text-align: center;
+    color: red;
+    font-size: 15px;
+}
+.footer-name{
+    color: blue;
+    text-decoration: none;
+    font-style: italic;
+}
 .schimify{
     text-align: center;
 }
