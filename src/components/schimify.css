@@ -5,6 +5,9 @@
     color: blue;
     height: 100%;
 }
+span{
+    color: blue;
+}
 .instructions{
     font-size: 15px;
 }
