@@ -232,7 +232,7 @@ clicked = true;
                     </div>
                 </div>
             </div>
-            <p className='footer'> Total Views: <span>{count}</span> </p> 
+            <p className='footer'> App Used: <span>{count}</span> times</p> 
             <p className='footer'>Made by <a href='https://github.com/ghosharnab00/auto-schema-generator' className='footer-name'>Arnab Ghosh</a ></p>
         </div>
     )
