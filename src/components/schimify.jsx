@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import './schimify.css'
 
@@ -12,6 +12,17 @@ let [pubdate, setPubdate] = useState('')
 let [slug, setslug] = useState('')
 let [kw, setkw] = useState('')
 let [imgList,setImgList] = useState ('')
+let [count, setCount] = useState('')
+
+let counter = ()=>{
+  fetch('https://api.countapi.xyz/update/schimify/arnab?amount=1')
+  .then(res=>res.json())
+  .then(res =>{
+    setCount(res.value)
+  })
+}
+
+useEffect(()=>{counter();}, [])
 
 clicked = true;
 // Handle Input It takes the URL from the frontend and creates the API 
@@ -20,6 +31,7 @@ clicked = true;
     setInputValue(inputValue)
     //let api =`/.netlify/functions/parser?url=${inputValue}`
     //console.log(api)
+    event.preventDefault();
   }
 
   let slugHandler= (event)=>{
@@ -39,6 +51,7 @@ clicked = true;
       setClicked(true);
       getResponse(inputValue);
       event.preventDefault();
+      
   }
 
   let getResponse = async(value) =>{
@@ -219,6 +232,7 @@ clicked = true;
                     </div>
                 </div>
             </div>
+            <p className='footer'> Total Views: <span>{count}</span> </p> 
             <p className='footer'>Made by <a href='https://github.com/ghosharnab00/auto-schema-generator' className='footer-name'>Arnab Ghosh</a ></p>
         </div>
     )
