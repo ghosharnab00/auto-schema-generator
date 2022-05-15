@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState,useRef , useEffect} from 'react'
 import axios from 'axios'
 import './schimify.css'
 
@@ -13,6 +13,18 @@ let [slug, setslug] = useState('')
 let [kw, setkw] = useState('')
 let [imgList,setImgList] = useState ('')
 let [count, setCount] = useState('')
+const [copySuccess, setCopySuccess] = useState('');
+
+const textAreaRef = useRef(null);
+
+function copyToClipboard(e) {
+  textAreaRef.current.select();
+  document.execCommand('copy');
+  // This is just personal preference.
+  // I prefer to not show the whole text area selected.
+  e.target.focus();
+  setCopySuccess('Copied!');
+};
 
 let counter = ()=>{
   fetch('https://api.countapi.xyz/update/schimify/arnab?amount=1')
@@ -174,60 +186,20 @@ clicked = true;
                         <p className='instructions'>⦿ Make sure to have a <span>hero image</span> in the blog. else it will give error</p>
                     </form>
                     <div className="right">
-                            <div className="schemawrapper">
-                                <pre className="wrapped" >
-                                
- <p>{html}</p>
- <p>{context}</p>
- <p>{blogtype}</p>
- <p>{mainentity}</p>
- <p>{webtype}</p>
- <p>{id}</p>
- <p>{heading}</p>
- <p>{description}</p>
- <p>{keyword}</p>
- <p>{img}</p>
- <p>{author}</p>
- <p>{authorurl}</p>
- <p>{publisher}</p>
- <p>{publisherlogo}</p>
- <p>{publisherurl}</p>
- <p>{datePublished}</p>
- <p>{htmlend}</p>
-
- <p>{html}</p>
- <p>{context}</p>
+                            <div className="schemawrapper">     
+ <div>
+        <textarea
+        className="wrapped"
+          ref={textAreaRef}
+          value={html  +  context  +  blogtype  + mainentity  +  webtype  +  id  +  heading  +  description  +  keyword  + img  +  author  +  authorurl  +  publisher  +  publisherlogo  +  publisherurl  +  datePublished  + htmlend  +  html  +  context  +  breadtype  +  itemlist  +  listitem  +  position1  +  nameHome  +  item  +  brackets  +  listitem  +  position2  +  nameBlog  +  blogItem  +  brackets  +  listitem  +  position3  +  nameSlug  +  itemURL  +  htmlend  +  html  + context  +  typewebsite  +  nameHiration  +  urlHiration  + potentialAction  +  SearchAction  +  target  + query  + htmlend}
+        />       
+       <div>
+         <button onClick={copyToClipboard} className='sumbit'>Copy</button> 
+         {copySuccess}
+       </div>
+     
+    </div>
  
- <p>{breadtype}</p>
- <p>{itemlist}</p>
- <p>{listitem}</p>
- <p>{position1}</p>
- <p>{nameHome}</p>
- <p>{item}</p>
- <p>{brackets}</p>
- <p>{listitem}</p>
- <p>{position2}</p>
- <p>{nameBlog}</p>
- <p>{blogItem}</p>
- <p>{brackets}</p>
- <p>{listitem}</p>
- <p>{position3}</p>
- <p>{nameSlug}</p>
- <p>{itemURL}</p>
- <p>{htmlend}</p>
-
- <p>{html}</p>
- <p>{context}</p>
- 
- <p>{typewebsite}</p>
- <p>{nameHiration}</p>
- <p>{urlHiration}</p>
- <p>{potentialAction}</p>
- <p>{SearchAction}</p>
- <p>{target}</p>
- <p>{query}</p>
- <p>{htmlend}</p>
- </pre>
                         </div>
                     </div>
                 </div>

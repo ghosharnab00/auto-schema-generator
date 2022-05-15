@@ -1,8 +1,7 @@
-import Schimify from "./components/schimify";
+import Schimify from "./components/schimify"; 
 function App() {
   return (
     <div className="App">
-     
       <Schimify/>
     </div>
   );

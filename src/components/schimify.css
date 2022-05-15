@@ -69,13 +69,14 @@ span{
     padding-left: 15px;
 }
 
-pre{
+.wrapped{
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     padding: 9.5px;
     margin: 0 0 10px;
-    
+    width: 100%;
+    height:70vh;
     
     color: #333;
     word-break: break-all;
