@@ -13,7 +13,7 @@ let [slug, setslug] = useState('')
 let [kw, setkw] = useState('')
 let [imgList,setImgList] = useState ('')
 let [count, setCount] = useState('')
-const [copySuccess, setCopySuccess] = useState('');
+let [copySuccess, setCopySuccess] = useState('');
 
 const textAreaRef = useRef(null);
 
@@ -195,7 +195,7 @@ clicked = true;
         />       
        <div>
          <button onClick={copyToClipboard} className='sumbit'>Copy</button> 
-         {copySuccess}
+         <p>{copySuccess}</p>
        </div>
      
     </div>
@@ -203,9 +203,10 @@ clicked = true;
                         </div>
                     </div>
                 </div>
-            </div>
-            <p className='footer'> App Used: <span>{count}</span> times</p> 
+                <p className='footer'> App Used: <span>{count}</span> times</p> 
             <p className='footer'>Made by <a href='https://github.com/ghosharnab00/auto-schema-generator' className='footer-name'>Arnab Ghosh</a ></p>
+            </div>
+            
         </div>
     )
 }
