@@ -22,7 +22,7 @@ const hirationblogdata = async () => {
    let description = $('meta[property="og:description"]').attr("content");
    let datepub = $('.post-full-meta-date').text();
    try {
-    let bgimg = $('.post-full-image').attr("style").replace("background: linear-gradient(0deg, rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.64)),url(","").replace('background-image: url(',"").replace(");","").split('?')[0];
+    let bgimg = $('.post-full-image').attr("style").replace("background: linear-gradient(0deg, rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.64)),url(","").replace('background-image: url(',"").replace(");","").replace('background-size:cover;',"").split('?')[0];
     //console.log($('.post-full-image').attr("style").replace("background: linear-gradient(0deg, rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.64)),url(",""));
     let imob = $('img.img-hook')
     const img = [];
