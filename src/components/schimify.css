@@ -2,21 +2,22 @@
     display: block;
     margin:0px auto;
     max-width: 80%;
-    color: blue;
+    color:black;
     height: 100vh;
 }
 span{
-    color: blue;
+    color: #ff7600;
 }
 .instructions{
     font-size: 15px;
+    color: black;
 }
 .instructions span {
-    color: red;
+    color: #ff7600;
 }
 .footer{
     text-align: center;
-    color: red;
+    color: #ff7600;
     font-size: 15px;
 }
 .footer-name{
