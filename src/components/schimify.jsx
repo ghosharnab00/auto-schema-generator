@@ -1,4 +1,5 @@
 import React, {useState,useRef , useEffect} from 'react'
+import { Grid,Container,Typography, Box, Button } from '@mui/material'
 import axios from 'axios'
 import './schimify.css'
 
@@ -140,6 +141,18 @@ clicked = true;
 
 
 
+return ( 
+  <>
+  <Container maxWidth={false}>
+        <Grid
+          container
+          spacing={3}
+        >
+        <Typography > Hiration Schimify</Typography>
+        </Grid>
+        </Container>
+        </>
+)
 
 
 
@@ -171,42 +184,41 @@ clicked = true;
 
 
 
-
-    return (
-        <div>
-            <div className="allwrap">
-                <h1 className="schimify"> <span>Hiration</span> Schimify</h1>
-                <div className="wrapper">
-                    <form className="left" action="/.netlify/functions/parser"> <input type="url" className='URL' name="url" id="url" placeholder='Paste the URL' value= {inputValue} onChange={inputchangeHandler}/>
-                        <input type="text" name="slug" id="slug" className='slug' placeholder='Paste the slug' value= {slug} onChange={slugHandler} required/>
-                        <input type="text" name="keyword" id="keyword" className='keyword' placeholder='Paste the keyword' value= {kw} onChange={kwHandler} required/>
-                        <button id="submit" className='sumbit' value= {clicked} onClick = {clickHandler}> Create the Schema </button>
+//     return (
+//         <div>
+//             <div className="allwrap">
+//                 <h1 className="schimify"> <span>Hiration</span> Schimify</h1>
+//                 <div className="wrapper">
+//                     <form className="left" action="/.netlify/functions/parser"> <input type="url" className='URL' name="url" id="url" placeholder='Paste the URL' value= {inputValue} onChange={inputchangeHandler}/>
+//                         <input type="text" name="slug" id="slug" className='slug' placeholder='Paste the slug' value= {slug} onChange={slugHandler} required/>
+//                         <input type="text" name="keyword" id="keyword" className='keyword' placeholder='Paste the keyword' value= {kw} onChange={kwHandler} required/>
+//                         <button id="submit" className='sumbit' value= {clicked} onClick = {clickHandler}> Create the Schema </button>
                         
-                        <p className='instructions'>⦿ Make sure to input the <span>Slug</span> and the <span>Keywords</span></p>
-                        <p className='instructions'>⦿ Make sure to have a <span>hero image</span> in the blog. else it will give error</p>
-                    </form>
-                    <div className="right">
-                            <div className="schemawrapper">     
- <div>
-        <textarea
-        className="wrapped"
-          ref={textAreaRef}
-          value={html  +  context  +  blogtype  + mainentity  +  webtype  +  id  +  heading  +  description  +  keyword  + img  +  author  +  authorurl  +  publisher  +  publisherlogo  +  publisherurl  +  datePublished  + htmlend  +  html  +  context  +  breadtype  +  itemlist  +  listitem  +  position1  +  nameHome  +  item  +  brackets  +  listitem  +  position2  +  nameBlog  +  blogItem  +  brackets  +  listitem  +  position3  +  nameSlug  +  itemURL  +  htmlend  +  html  + context  +  typewebsite  +  nameHiration  +  urlHiration  + potentialAction  +  SearchAction  +  target  + query  + htmlend}
-        />       
-       <div>
-         <button onClick={copyToClipboard} className='sumbit'>Copy</button> 
-         <p>{copySuccess}</p>
-       </div>
+//                         <p className='instructions'>⦿ Make sure to input the <span>Slug</span> and the <span>Keywords</span></p>
+//                         <p className='instructions'>⦿ Make sure to have a <span>hero image</span> in the blog. else it will give error</p>
+//                     </form>
+//                     <div className="right">
+//                             <div className="schemawrapper">     
+//  <div>
+//         <textarea
+//         className="wrapped"
+//           ref={textAreaRef}
+//           value={html  +  context  +  blogtype  + mainentity  +  webtype  +  id  +  heading  +  description  +  keyword  + img  +  author  +  authorurl  +  publisher  +  publisherlogo  +  publisherurl  +  datePublished  + htmlend  +  html  +  context  +  breadtype  +  itemlist  +  listitem  +  position1  +  nameHome  +  item  +  brackets  +  listitem  +  position2  +  nameBlog  +  blogItem  +  brackets  +  listitem  +  position3  +  nameSlug  +  itemURL  +  htmlend  +  html  + context  +  typewebsite  +  nameHiration  +  urlHiration  + potentialAction  +  SearchAction  +  target  + query  + htmlend}
+//         />       
+//        <div>
+//          <button onClick={copyToClipboard} className='sumbit'>Copy</button> 
+//          <p>{copySuccess}</p>
+//        </div>
      
-    </div>
+//     </div>
  
-                        </div>
-                    </div>
-                </div>
-                <p className='footer'> App Used: <span>{count}</span> times</p> 
-            <p className='footer'>Made by <a href='https://github.com/ghosharnab00/auto-schema-generator' className='footer-name'>Arnab Ghosh</a ></p>
-            </div>
+//                         </div>
+//                     </div>
+//                 </div>
+//                 <p className='footer'> App Used: <span>{count}</span> times</p> 
+//             <p className='footer'>Made by <a href='https://github.com/ghosharnab00/auto-schema-generator' className='footer-name'>Arnab Ghosh</a ></p>
+//             </div>
             
-        </div>
-    )
+//         </div>
+//     )
 }
