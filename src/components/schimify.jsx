@@ -151,6 +151,7 @@ export default function Schimify() {
     <Container maxWidth={"lg"} sx={{ display: 'flex', flexDirection: "column", textAlign: "center" }}  >
 
       <Container sx={{ margin: "30px 0", textAlign: "center" }} item><Typography component={"h1"} variant={"h3"} fontWeight={800}>Hiration <span>Schimify</span></Typography>
+      <Typography component={"subtitle"} variant={"subtitle"} color="darkgray">Only for Hiration's Content Team</Typography>
       </Container>
 
       <Grid spacing={3} sx={{ display: 'flex', flexDirection: "row" }} >
